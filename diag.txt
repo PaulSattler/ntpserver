@@ -1,0 +1,17 @@
+netstat -ano | findstr :123
+-> PID
+tasklist | findstr [PID]
+
+Portprobleme:
+net stop w32time
+net start w32time
+sc query w32time 
+
+Wenn Stopp von w32time almservice mit killt 
+net start almservice
+
+NTP Server Testen:
+w32tm /stripchart /computer:127.0.0.1 /dataonly /samples:10
+
+
+taskkill /pid [PID] /f
